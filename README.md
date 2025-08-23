@@ -123,21 +123,6 @@ This project showcases how to deploy and manage a static website using **AWS S3*
 - ✔️ Live working website
 
 ---
-
-## 🖼️ Screenshots
-
-| #  | Description                                | Screenshot File Name                |
-|----|--------------------------------------------|-------------------------------------|
-| 1  | AWS S3 bucket showing uploaded files       | `s3-bucket-interface.png`           |
-| 2  | Cloudflare DNS records + nameservers       | `cloudflare-dns-and-nameservers.png`|
-| 3  | HTTPS enabled in Cloudflare                | `cloudflare-https-settings.png`     |
-| 4  | Domain is active and enabled               | `cloudflare-domain-active.png`      |
-| 5  | GitHub Actions deployment log              | `github-actions-workflow.png`       |
-| 6  | Browser showing SSL padlock on live site   | `ssl-https-browser-view.png`        |
-
-📁 All screenshots are stored in the `/screenshots/` directory in this repository.
-
----
 ## 🖼️ Screenshots
 
 1. **AWS S3 Bucket Interface (Files + Folders)**  
