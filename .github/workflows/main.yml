@@ -1,0 +1,32 @@
+name: CI/CD for Static Website
+
+on:
+  push:
+    branches:
+      - main  # Deploy only on main branch push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout Code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Configure AWS Credentials
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1   # Change to your region
+
+      # 3. Sync files to S3 (ignores GitHub workflow files)
+      - name: Deploy to S3
+        run: |
+          aws s3 sync ./ s3://oyesk.tech \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "*.md"
